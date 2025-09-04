@@ -57,19 +57,6 @@ public class Main {
         } while (opcion != 7);
     }
 
-
-
-    public static void mostrarMenu() {
-        System.out.println("\n MENÚ DE BIBLIOTECA ");
-        System.out.println("1. Crear Cliente");
-        System.out.println("2. Mostrar clientes");
-        System.out.println("3. Crear Empleado");
-        System.out.println("4. Crear Libro");
-        System.out.println("5. Validar edad");
-        System.out.println("6. Validar libro");
-        System.out.println("7. Salir");
-    }
-
     public static String validarEdadCliente(Biblioteca biblioteca) {
         String mensaje = "";
         String documento = leerStringConsola("Ingrese el documento: ");
@@ -111,45 +98,7 @@ public class Main {
         }
         return mensaje;
     }
-    /*public static String validarEdadCliente(String documento, String edad) {
-        Cliente cliente;
-        String mensaje = "No hay ningun usuario con ese documento"; // valor por defecto
-
-        for (int i = 0; i < biblioteca.getListaClientes().size(); i++) {
-            cliente = biblioteca.getListaClientes().get(i);
-
-            if (cliente.getDocumento().equals(documento)) {
-                System.out.println("Se validó el cliente: " + cliente.getNombre());
-
-                if (cliente.getEdad().equals(edad)) {
-                    mensaje = "La edad es correcta";
-                } else {
-                    mensaje = "La edad no coincide";
-                }
-                break; // ya encontraste al cliente, no sigas buscando
-            }
-        }
-        return mensaje;
-    }*/
-
-    /*public static String validarNombreLibro(){
-
-    }*/
-
-
-   /* public static Cliente obtenerCliente(Biblioteca biblioteca) {
-        System.out.println("Ingrese el documento del cliente que busca:");
-        //String idCliente = leerString();
-        Cliente clienteEncontrado = null;
-        for (Cliente c : biblioteca.getListaClientes()) {
-            if (c.getDocumento().equals(idCliente)) {
-                clienteEncontrado = c;
-                break;
-            }
-        }
-        return clienteEncontrado;
-    }*/
-
+ 
     private static Biblioteca inicializarDatos() {
         Biblioteca biblioteca = new Biblioteca("CRAI");
         Cliente cliente = new Cliente("Juan", "1094", "87676768", "user@example.com", "15");
@@ -248,4 +197,17 @@ public class Main {
     public static Libro crearLibro(String nombre, String genero, String autor, String editorial, String isbn) {
         return new Libro(nombre, genero, autor, editorial, isbn );
     }
+
+
+    public static void mostrarMenu() {
+        System.out.println("\n MENÚ DE BIBLIOTECA ");
+        System.out.println("1. Crear Cliente");
+        System.out.println("2. Mostrar clientes");
+        System.out.println("5. Validar edad");
+        System.out.println("3. Crear Empleado");
+        System.out.println("4. Crear Libro");
+        System.out.println("6. Validar libro");
+        System.out.println("7. Salir");
+    }
+
 }
